@@ -2,7 +2,10 @@
 django-simple-pages
 ===================
 
-|codacy| |pypi|
+|travis| |codacy| |pypi|
+
+.. |travis| image:: https://travis-ci.org/teapow/django-simple-pages.svg?branch=master
+   :target: https://travis-ci.org/teapow/django-simple-pages
 
 .. |codacy| image:: https://api.codacy.com/project/badge/Grade/9be353b72b944c788f886934fafe9742
    :target: https://www.codacy.com/app/teapow/django-simple-pages
@@ -24,11 +27,10 @@ Example use cases include:
 Quick-start
 ===========
 
-1. Install: ``pip install django-simple-pages``.
-2. Add: ``simple_pages`` to your ``INSTALLED_APPS``.
-3. Add: ``simple_pages.middleware.PageFallbackMiddleware`` to your
-   ``MIDDLEWARE_CLASSES``.
-4. Run: ``python manage.py migrate simple_pages``.
+1. Install ``pip install django-simple-pages``.
+2. Add ``simple_pages`` to ``INSTALLED_APPS``.
+3. Add ``simple_pages.middleware.PageFallbackMiddleware`` to ``MIDDLEWARE``.
+4. Run ``python manage.py migrate simple_pages``.
 
 
 Usage

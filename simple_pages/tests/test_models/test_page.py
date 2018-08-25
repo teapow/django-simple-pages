@@ -1,4 +1,5 @@
 from django_dynamic_fixture import G
+from django.core.exceptions import ValidationError
 from django.test import TestCase
 
 from ...models import Page
@@ -51,3 +52,19 @@ class PageTestCase(TestCase):
         expected = '/alternate'
         actual = self.page.get_absolute_url()
         self.assertEqual(expected, actual)
+
+    def test_clean_1(self):
+        """ Tests the Page.clean() method. """
+        self.page.clean()
+
+        self.page.access_url = "test"
+        with self.assertRaises(ValidationError):
+            self.page.clean()
+
+    def test_clean_2(self):
+        """ Tests the Page.clean() method. """
+        self.page.clean()
+
+        self.page.template_name = "/test"
+        with self.assertRaises(ValidationError):
+            self.page.clean()

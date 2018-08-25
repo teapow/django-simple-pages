@@ -28,4 +28,5 @@ setup(
         'Programming Language :: Python :: 3',
         'Topic :: Utilities',
     ],
+    test_suite='simple_pages.run_tests.run',
 )
