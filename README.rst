@@ -17,14 +17,39 @@ Quick-start
 
 1. Install: ``pip install django-simple-pages``.
 2. Add: ``simple_pages`` to your ``INSTALLED_APPS``.
-3. Add: ``simple_pages.middleware.PageFallbackMiddleware`` to your ``MIDDLEWARE_CLASSES``.
+3. Add: ``simple_pages.middleware.PageFallbackMiddleware`` to your
+   ``MIDDLEWARE_CLASSES``.
 4. Run: ``python manage.py migrate simple_pages``.
 
 
 Usage
 =====
 
-Simply navigate to your ``/admin`` and create a new ``Page`` object.
+Simply navigate to ``/admin`` and create a new ``Page`` object. A ``Page``
+consists of the following attributes:
+
+* **title:** The title of the page. This is rendered in the ``<title>`` tag
+  if ``template_name`` is set to ``simple_pages/default.html``.
+
+* **access_url:** The URL to access this page. All URLs should start with a
+  leading slash.
+
+* redirect_url: The URL to redirect to. If set, ``content`` will not be
+  rendered.
+
+* enabled: When set to True, this page is active. Setting this value to
+  False means that you will see a 404 if you navigate to the page's
+  ``access_url``.
+
+* template_name: The path to the template used to render ``content``.
+  Supported values include:
+
+  * ``simple_pages/default.html``: Renders a ``<head>`` containing a
+    ``<title>`` tag, and a ``<body>`` containing the page's ``content``.
+
+  * ``simple_pages/raw.html``: Renders the page's ``content`` only.
+
+Note: **Bold** attributes are required.
 
 
 Changelog
