@@ -2,7 +2,7 @@ language: python
 cache: pip
 sudo: false
 python:
- - "2.7"
+ - "3.6"
 install: pip install codacy-coverage coverage tox-travis
 before_script:
   coverage erase
