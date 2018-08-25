@@ -2,6 +2,15 @@
 django-simple-pages
 ===================
 
+|codacy| |pypi|
+
+.. |codacy| image:: https://api.codacy.com/project/badge/Grade/9be353b72b944c788f886934fafe9742
+   :target: https://www.codacy.com/app/teapow/django-simple-pages
+
+.. |pypi| image:: https://badge.fury.io/py/django-simple-pages.svg
+    :target: https://badge.fury.io/py/django-simple-pages
+
+
 `django-simple-pages` allows you to store HTML documents in models, which can
 be served automatically without the need for hard-coded URL patterns.
 
