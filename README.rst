@@ -2,13 +2,16 @@
 django-simple-pages
 ===================
 
-|travis| |codacy| |pypi|
+|travis| |codacy| |coverage| |pypi|
 
 .. |travis| image:: https://travis-ci.org/teapow/django-simple-pages.svg?branch=master
    :target: https://travis-ci.org/teapow/django-simple-pages
 
 .. |codacy| image:: https://api.codacy.com/project/badge/Grade/9be353b72b944c788f886934fafe9742
    :target: https://www.codacy.com/app/teapow/django-simple-pages
+
+.. |coverage| image:: https://api.codacy.com/project/badge/Coverage/9be353b72b944c788f886934fafe9742
+   :target: https://www.codacy.com/app/teapow/django-envi
 
 .. |pypi| image:: https://badge.fury.io/py/django-simple-pages.svg
     :target: https://badge.fury.io/py/django-simple-pages
