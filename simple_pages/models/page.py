@@ -42,26 +42,26 @@ class Page(models.Model):
         null=True,
         blank=True,
         help_text=_("The name of the template to use when rendering this "
-                    "page. If blank (or invalid) the pages/default.html "
-                    "template will be used.")
+                    "page. If blank or invalid, the simple_pages/default.html "
+                    "template will be used."),
     )
     enabled = models.BooleanField(
         verbose_name=_("Enabled"),
         default=True,
         blank=True,
-        help_text=_("If unchecked, this model is disabled.")
+        help_text=_("If unchecked, this model is disabled."),
     )
     created = models.DateTimeField(
         verbose_name=_("Created date/time"),
         auto_now_add=True,
         help_text=_("The date and time on which this model instance was first "
-                    "created.")
+                    "created."),
     )
     modified = models.DateTimeField(
         verbose_name=_("Modified date/time"),
         auto_now=True,
         help_text=_("The date and time on which this model instance was last "
-                    "modified.")
+                    "modified."),
     )
 
     def __str__(self):
