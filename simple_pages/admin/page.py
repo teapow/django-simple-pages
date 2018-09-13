@@ -5,6 +5,7 @@ from django.contrib.admin import register, ModelAdmin
 from django.utils.translation import ugettext_lazy as _
 
 from ..models import Page
+from ..widgets import CodeMirrorTextarea
 
 
 class PageAddForm(forms.ModelForm):
@@ -31,6 +32,11 @@ class PageChangeForm(forms.ModelForm):
             "created",
             "modified",
         )
+
+    def __init__(self, *args, **kwargs):
+        """Ensure the content field is using the CodeMirrorTextarea widget."""
+        super(PageChangeForm, self).__init__(*args, **kwargs)
+        self.fields["content"].widget = CodeMirrorTextarea(mode="htmlmixed")
 
 
 @register(Page)
