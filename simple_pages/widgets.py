@@ -64,4 +64,3 @@ class CodeMirrorTextarea(forms.Textarea):
             </script>
         """
         return "\n".join([default, script])
-
