@@ -4,10 +4,13 @@
     <head>
         <meta charset="UTF-8">
         <title>{{ page.title }}</title>
+
+        {% block extra_head %}{% endblock extra_head %}
     </head>
 
     <body>
         <!-- django-simple-pages: [{{ page.pk }}] {{ page }} {{ page.created }} -->
         {% block main %}{% endblock main %}
+        {% block scripts %}{% endblock scripts %}
     </body>
 </html>
