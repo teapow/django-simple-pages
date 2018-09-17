@@ -14,16 +14,31 @@ class Page(models.Model):
         verbose_name = _("page")
         verbose_name_plural = _("pages")
 
+    class Template:
+        """Represents the templates available."""
+
+        base = "simple_pages/base.html"
+        default = "simple_pages/default.html"
+        fade = "simple_pages/fade.html"
+        raw = "simple_pages/raw.html"
+
+        CHOICES = [
+            (base, base),
+            (default, default),
+            (fade, fade),
+            (raw, raw),
+        ]
+
     title = models.CharField(
         verbose_name=_("title"),
         max_length=255,
-        help_text=_("The title of this Page."),
+        help_text=_("The title of this page."),
     )
     access_url = models.CharField(
         verbose_name=_("access URL"),
         max_length=255,
         unique=True,
-        help_text=_("The URL at which this Page can be accessed. "
+        help_text=_("The URL at which this page can be accessed. "
                     "eg: /terms-and-conditions/"),
     )
     redirect_url = models.CharField(
@@ -31,22 +46,21 @@ class Page(models.Model):
         max_length=255,
         blank=True,
         null=True,
-        help_text=_("The URL to redirect to when this Page is accessed."),
+        help_text=_("The URL to redirect to when this page is accessed."),
     )
     content = models.TextField(
         verbose_name=_("content"),
         blank=True,
         null=True,
-        help_text=_("The content to be displayed in the body of this Page."),
+        help_text=_("The content to be displayed in the body of this page."),
     )
     template_name = models.CharField(
         verbose_name=_("template name"),
         max_length=255,
-        null=True,
-        blank=True,
+        choices=Template.CHOICES,
+        default=Template.default,
         help_text=_("The name of the template to use when rendering this "
-                    "page. If blank or invalid, the simple_pages/default.html "
-                    "template will be used."),
+                    "page."),
     )
     enabled = models.BooleanField(
         verbose_name=_("Enabled"),

@@ -75,9 +75,9 @@ class PageView(TemplateView):
         return HttpResponse(template.render(context=context, request=request))
 
     def get_template(self):
-        """Get the template based on the page's template_path."""
+        """Get the template based on the page's template_name."""
         try:
-            # If self.page.template name is blank, it'll throw an IOError.
+            # If the page's template can't be loded, fall back to the default.
             t = loader.get_template(template_name=self.page.template_name)
         except (IOError, exceptions.TemplateDoesNotExist):
             t = loader.get_template(template_name=self.template_name)
