@@ -15,11 +15,14 @@ install: pip install \
   flake8-quotes \
   "pydocstyle<4.0.0"
   tox-travis
+
 before_script:
   - coverage erase
+
 script:
   - flake8
   - tox
+
 after_success:
   - coverage combine
   - coverage report
